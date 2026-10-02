@@ -24,6 +24,7 @@ body {
   top: -3px;
   border-radius: 0 0px 20px 0;
 }
+
 .account > button {
   background-color: rgba(8, 8, 8, 0.85);
   opacity: 0;
@@ -37,6 +38,7 @@ body {
   top: -1px;
   color: aliceblue;
   border-style: none;
+  display: flex;
 }
 .account > button:hover {
   transition: 0.2s ease-in-out;
@@ -1093,10 +1095,148 @@ HERO HEADER SECTION  NAVBAR END
 @media (max-width: 480px) {
   .hero-header-content {
     padding: 0.75rem;
+    display: none;
   }
 
   .nav-links {
     gap: 12px;
+    display: none;
+  }
+
+  /* Dark background behind popup */
+  .login-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 9999;
+  }
+
+  /* Popup active */
+  .login-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Login box */
+  .login-box {
+    width: 380px;
+    padding: 40px;
+
+    background: #111;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    font-family: michroma;
+    text-align: center;
+
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.35);
+
+    transform: scale(0.8);
+
+    transition: 0.3s;
+  }
+
+  /* Popup animation */
+  .login-overlay.active .login-box {
+    transform: scale(1);
+  }
+
+  .login-box h2 {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  .login-box p {
+    color: #aaa;
+  }
+
+  /* Inputs */
+  .login-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px;
+
+    margin: 10px 0;
+
+    background: #1c1c1c;
+
+    border: 1px solid #444;
+    border-radius: 8px;
+
+    color: white;
+
+    outline: none;
+  }
+
+  .login-box input:focus {
+    border-color: red;
+  }
+
+  /* Login button */
+  .login-submit {
+    width: 100%;
+
+    padding: 14px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #e63939;
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+  }
+
+  .login-submit:hover {
+    background: #ff5555;
+  }
+
+  /* Close button */
+  .close-btn {
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    background: none;
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+  }
+
+  /* Links */
+  .login-box a {
+    color: #ff4b4b;
+    text-decoration: none;
+  }
+
+  .signup {
+    margin-top: 20px;
   }
 
   .nav-links > li > a {
@@ -1106,6 +1246,7 @@ HERO HEADER SECTION  NAVBAR END
   .account > button {
     padding: 6px 12px;
     font-size: 13px;
+    background-color: none;
   }
 
   .hero-img {
@@ -1130,8 +1271,10 @@ HERO HEADER SECTION  NAVBAR END
     height: 170px;
     animation: none;
     position: relative;
-    left: 70px;
+    left: 30px;
     margin-top: 246px;
+    animation: carEnter 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    filter: drop-shadow(7px 19px 12px rgba(0, 0, 0, 0.8));
   }
 
   .race-car-2 {
@@ -1139,8 +1282,36 @@ HERO HEADER SECTION  NAVBAR END
     height: 170px;
     animation: none;
     position: relative;
-    left: 180px;
+    left: 160px;
     margin-top: 156px;
+    animation: carEnter2 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    filter: drop-shadow(7px 19px 12px rgba(0, 0, 0, 0.8));
+  }
+  @keyframes carEnter {
+    0% {
+      top: -1999px;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: -630px;
+    }
+  }
+  @keyframes carEnter2 {
+    0% {
+      top: 90px;
+      right: -240px;
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    100% {
+      top: -950px;
+
+      opacity: 1;
+    }
   }
 
   .about-content {
@@ -1194,4 +1365,85 @@ HERO HEADER SECTION  NAVBAR END
   .footer-links > h1 {
     font-size: 38px;
   }
+}
+
+.scnd-nav {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: start;
+  padding: 1rem 2rem;
+  justify-content: left;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  background-color: rgba(8, 8, 8, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.132);
+  height: 10px;
+  width: 570px;
+  top: -3px;
+  border-radius: 0px 0px 20px 0;
+}
+.scnd-nav > ul > li > a {
+  color: #f4eeee;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  text-decoration: none;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(238, 233, 233);
+  font-weight: 500;
+}
+.scnd-nav {
+  backdrop-filter: blur(16px);
+  background-color: transparent;
+  width: 250px;
+  height: 400px;
+  line-height: 90px;
+  list-style-type: none;
+  padding: 30px;
+  display: none;
+  z-index: 9999;
+  position: absolute;
+}
+.scnd-nav > ul > li > a:hover {
+  transition: 0.2s ease-in-out;
+  color: rgb(237, 41, 41);
+  text-decoration: 1px underline;
+}
+#backBtn {
+  position: relative;
+  left: 230px;
+  top: -210px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.scnd-nav > ul > li {
+  list-style-type: none;
+  text-decoration: none;
+}
+.scnd-nav > i {
+  color: #f4eeee;
+  font-size: 30px;
+  position: relative;
+  top: -10px;
+}
+.nav-icon {
+  color: #f4eeee;
+  font-size: 20px;
+  position: relative;
+  top: -10px;
+
+  position: absolute;
+  top: 4px;
+  z-index: 9999;
+  display: flex;
+}
+
+.nav-icon > i {
+  display: flex;
+  flex-direction: row;
 }

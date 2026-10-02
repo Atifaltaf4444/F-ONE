@@ -44,3 +44,20 @@ loginBtn.addEventListener("click", () => {
 closeBtn.addEventListener("click", () => {
   loginPopup.classList.remove("active");
 });
+
+
+
+function closeNav(){
+  const scndNav = document.querySelector(".scnd-nav");
+  scndNav.style.display = "none";
+}
+function openNav(){
+  const scndNav = document.querySelector(".scnd-nav");
+  scndNav.style.display = "flex";
+}
+
+
+
+
+
+
