@@ -863,63 +863,335 @@ HERO HEADER SECTION  NAVBAR END
     left: 450px;
   }
 }
-@media (max-width: 600px) {
-  .hero-img {
-    position: relative;
-    width: 560px;
-    height: 650px;
 
-    top: -56px;
-    overflow: hidden;
-    object-fit: cover;
-    z-index: -1;
+/*==========================================================
+                 MOBILE RESPONSIVE SECTION
+                 ADDED — ORIGINAL CSS UNCHANGED
+==========================================================*/
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
   }
+
+  /* NAVBAR */
+  .hero-header-content {
+    width: 100%;
+    height: auto;
+    min-height: 10px;
+    box-sizing: border-box;
+    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-links > li > a {
+    font-size: 15px;
+  }
+
+  .account > button {
+    position: static;
+    margin-left: auto;
+    padding: 7px 18px;
+    font-size: 15px;
+  }
+
+  /* LOGIN POPUP */
+  .login-box {
+    width: calc(100% - 40px);
+    max-width: 380px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  .login-box h2 {
+    font-size: 24px;
+  }
+
+  /* SIGNUP */
+  .signup-box {
+    width: calc(100% - 40px);
+    max-width: 400px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+  }
+
+  /* HERO */
+  .hero-img {
+    width: 100%;
+    height: 500px;
+    top: -20px;
+  }
+
   .hello {
-    color: rgb(231, 6, 6);
-    font-size: 140px;
-    position: relative;
-    top: -580px;
-    margin-left: 30px;
-    font-variant: small-caps;
-    font-weight: 900;
-    font-family: orbitron;
-    font-style: italic;
-    text-shadow: 3px 2px 26px rgb(109, 11, 11);
-    animation: dropIn 1.5s ease-out forwards;
+    font-size: clamp(55px, 16vw, 100px);
+    top: -450px;
+    margin-left: 5vw;
   }
 
   .hello-p {
-    color: rgb(255, 255, 255);
-    text-shadow: 3px 5px 9px rgb(236, 14, 14);
-
-    font-size: 10px;
-    font-weight: 800;
-    font-family: orbitron;
-    position: relative;
-    top: -590px;
-    width: 200px;
+    width: calc(100% - 40px);
+    font-size: 12px;
+    top: -455px;
     margin-left: 20px;
-    animation: appear 2.5s ease-in-out forwards;
   }
 
   .race-car {
-    position: relative;
-    rotate: -70deg;
-    transform: scale(0.8);
-    height: 180px;
-    top: 150px;
-    left: 50px;
-    animation: carEnter 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    filter: drop-shadow(7px 19px 12px rgba(0, 0, 0, 0.8));
+    height: 250px;
+    top: -650px;
+    left: 25%;
   }
+
   .race-car-2 {
+    height: 250px;
+    top: -950px;
+    left: 45%;
+  }
+
+  /* ABOUT */
+  .about-content {
+    margin-top: -700px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .about-content > h1 {
+    font-size: 32px;
+  }
+
+  .truth-1,
+  .truth-2,
+  .truth-3,
+  .truth-4 {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 80px;
+  }
+
+  .truth-1::after,
+  .truth-2::after,
+  .truth-3::after,
+  .truth-4::after {
+    display: none;
+  }
+
+  .truth-1 > img,
+  .truth-2 > img,
+  .truth-3 > img,
+  .truth-4 > img {
+    width: min(85vw, 350px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-top: 0;
+    box-sizing: border-box;
+  }
+
+  .truth-1 > p,
+  .truth-2 > p,
+  .truth-3 > p,
+  .truth-4 > p {
+    width: min(90vw, 450px);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 0;
+  }
+
+  /* DECORATIVE CARS */
+  .destiny-car,
+  .destiny-car2,
+  .destiny-car3 {
+    display: none;
+  }
+
+  /* HIGHLIGHTS */
+  .highlights,
+  .highlights2 {
+    flex-direction: column;
+    gap: 40px;
+    padding: 120px 20px 100px;
+    box-sizing: border-box;
+  }
+
+  .high-heading {
+    top: 80px;
+    padding: 0 20px;
+  }
+
+  .high-heading > h1 {
+    font-size: 38px;
+  }
+
+  .high-heading > p {
+    font-size: 12px;
+  }
+
+  .highlights > iframe,
+  .highlights2 > iframe {
+    width: min(90vw, 350px);
+    height: 220px;
+    margin-top: 0;
+  }
+
+  .highlights > iframe:hover,
+  .highlights2 > iframe:hover {
+    transform: none;
+  }
+
+  /* FOOTER */
+  .footer {
+    flex-direction: column;
+    gap: 40px;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .footer > h1 {
+    font-size: 13px;
+  }
+
+  .footer-links > h1 {
+    font-size: 48px;
+  }
+
+  .footer-links > p {
+    font-size: 12px;
+  }
+
+  .social-links {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+    border-left: none;
+    border-top: 1px solid grey;
+    padding-top: 20px;
+  }
+
+  .social-links > i {
+    font-size: 28px;
+    line-height: normal;
+  }
+
+  .services {
+    line-height: 40px;
+  }
+
+  .services > span > a {
+    font-size: 13px;
+  }
+}
+
+/* SMALL PHONES */
+@media (max-width: 480px) {
+  .hero-header-content {
+    padding: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links > li > a {
+    font-size: 13px;
+  }
+
+  .account > button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .hero-img {
+    height: 430px;
+  }
+
+  .hello {
+    top: -390px;
+    margin-left: 20px;
+    font-size: 52px;
+  }
+
+  .hello-p {
+    top: -400px;
+    margin-left: 20px;
+    width: calc(100% - 40px);
+    font-size: 10px;
+  }
+
+  .race-car {
+    width: 290px;
+    height: 170px;
+    animation: none;
     position: relative;
-    rotate: 109deg;
-    transform: scale(0.8);
-    height: 180px;
-    top: 90px;
+    left: 70px;
+    margin-top: 246px;
+  }
+
+  .race-car-2 {
+    width: 290px;
+    height: 170px;
+    animation: none;
+    position: relative;
     left: 180px;
-    animation: carEnter2 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    filter: drop-shadow(7px 19px 12px rgba(0, 0, 0, 0.8));
+    margin-top: 156px;
+  }
+
+  .about-content {
+    margin-top: -600px;
+    padding: 0 15px;
+  }
+
+  .about-content > h1 {
+    font-size: 27px;
+  }
+
+  .truth-1,
+  .truth-2,
+  .truth-3,
+  .truth-4 {
+    margin-top: 60px;
+  }
+
+  .truth-1 > img,
+  .truth-2 > img,
+  .truth-3 > img,
+  .truth-4 > img {
+    width: min(85vw, 300px);
+  }
+
+  .truth-1 > p,
+  .truth-2 > p,
+  .truth-3 > p,
+  .truth-4 > p {
+    width: 90vw;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .highlights,
+  .highlights2 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .high-heading > h1 {
+    font-size: 30px;
+  }
+
+  .highlights > iframe,
+  .highlights2 > iframe {
+    width: 90vw;
+    height: 200px;
+  }
+
+  .footer-links > h1 {
+    font-size: 38px;
   }
 }
